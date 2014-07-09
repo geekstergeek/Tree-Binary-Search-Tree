@@ -9,7 +9,7 @@ struct node{
 };
 
 typedef struct node  *NODE; 
-int count=0;
+int count=0,counter=0;
 
 void inorder(NODE root){
 
@@ -152,6 +152,19 @@ int countLeaves(NODE root){
 	countLeaves(root->rlink);
 	return count;
 }
+
+int countNodes(NODE root){
+	
+	if(root==NULL) return;
+	
+
+	countNodes(root->llink);
+	counter++;
+	countNodes(root->rlink);
+
+	return counter;
+}
+
 int main(){
 
 	
@@ -207,5 +220,9 @@ int main(){
 	printf("\n");
 
 	printf("Number of Leaves = %d", countLeaves(root));
+	printf("\n");
+
+	printf("Number of Nodes %d", countNodes(root));
+	
 	printf("\n");
 }
