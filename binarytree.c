@@ -48,7 +48,7 @@ NODE insert(int item, NODE root){
 	cur = root;
 	
 	temp->info = item;
-	temp->llink=temp->rlink=NULL;
+	temp	->llink=temp->rlink=NULL;
 	if(cur==NULL){
 		
 		printf("\nroot inserted with item %d  \n", item);
@@ -76,6 +76,7 @@ NODE insert(int item, NODE root){
 
 	return root;
 }
+
 
 
 NODE search(int item, NODE root){
