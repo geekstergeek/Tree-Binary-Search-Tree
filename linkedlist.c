@@ -81,11 +81,10 @@ NODE delete(int item,NODE head){
 }
 
 NODE ntolast(NODE head, int n){
-	printf("bla1");
+	
 	int i;
 	
 	if(head == NULL){
-		printf("bla1");
 		return NULL;
 	}
 	
@@ -102,7 +101,7 @@ NODE ntolast(NODE head, int n){
 	while(cur!=NULL){
 		prev=prev->link;
 		cur=cur->link;	
-	printf("bla3");
+	
 	}
 	
 	return prev; 		
@@ -126,7 +125,7 @@ void printList(NODE head){
 }
 
 void main(){
-	int n = 5;
+	int n = 9;
 	NODE head =NULL;
 	head=delete(9,head);
 	head=insert(2,head);	
