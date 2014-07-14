@@ -38,7 +38,7 @@ NODE delete(int item,NODE head){
 
 	if(head==NULL){
 		printf("\nNothing to delete\n");
-		return head;
+		return NULL;
 	}
 
 	
@@ -80,28 +80,61 @@ NODE delete(int item,NODE head){
 	
 }
 
+NODE ntolast(NODE head, int n){
+	printf("bla1");
+	int i;
+	
+	if(head == NULL){
+		printf("bla1");
+		return NULL;
+	}
+	
+	NODE prev=head , cur = head;
+	
+	for(i=0;i<n;i++){
+		if(cur==NULL){
+			printf("Position invalid");
+			return NULL;		
+		}
+		cur=cur->link;	
+	}
+	
+	while(cur!=NULL){
+		prev=prev->link;
+		cur=cur->link;	
+	printf("bla3");
+	}
+	
+	return prev; 		
+
+	
+}
+
 void printList(NODE head){
 
 	if(head==NULL){
 		printf("\nNothing in the list\n");
 		return;	
 	}
+
 	NODE cur =head;
 	while(cur!=NULL){
 		printf("%d\t",cur->info);	
 		cur=cur->link;
+		
 	}
 }
 
 void main(){
-	
+	int n = 5;
 	NODE head =NULL;
 	head=delete(9,head);
 	head=insert(2,head);	
 	head=insert(1,head);
 	head=insert(3,head);
 	head=insert(4,head);
-
+	
+	
 	printf("\n List is \n:");
 	printList(head);
 	
@@ -113,6 +146,22 @@ void main(){
 	printf("\n List is \n:");
 	printList(head);
 
+
+	head=insert(2,head);	
+	head=insert(1,head);
+	head=insert(3,head);
+	head=insert(4,head);
+	head=insert(2,head);	
+	head=insert(1,head);
+	head=insert(3,head);
+	head=insert(4,head);
+	printf("\n List is \n:");
+	printList(head);
+
 	printf("\n");
 
+	head = ntolast(head,n);
+	printf("\n List is \n:");
+	printList(head);
+	printf("\n");
 }
